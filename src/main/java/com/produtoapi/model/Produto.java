@@ -1,8 +1,20 @@
 package com.produtoapi.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.validation.constraints.NotEmpty;
+
+@Entity
 public class Produto {
-    private int id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long id;
+
+    @NotEmpty(message = "Informe um nome.")
     private String nome;
+
     private int quantidade;
     private double preco;
     private String status;
@@ -11,7 +23,7 @@ public class Produto {
 
     }
 
-    public Produto(int id, String nome, int quantidade, double preco, String status) {
+    public Produto(long id, String nome, int quantidade, double preco, String status) {
         this.id = id;
         this.nome = nome;
         this.quantidade = quantidade;
@@ -19,11 +31,11 @@ public class Produto {
         this.status = status;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
