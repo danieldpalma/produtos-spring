@@ -20,7 +20,7 @@ public class ProdutoController {
     }
 
     @GetMapping("/{id}")
-    public Optional<Produto> getProduto(long id) {
+    public Optional<Produto> getProduto(@PathVariable Long id) {
         return produtoService.listarProdutoPorId(id);
     }
 
