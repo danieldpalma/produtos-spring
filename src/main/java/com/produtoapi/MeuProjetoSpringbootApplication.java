@@ -1,4 +1,4 @@
-package com.produtoapi.MeuProjetoSpringBoot;
+package com.produtoapi;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
