@@ -10,7 +10,7 @@ import jakarta.validation.constraints.NotEmpty;
 public class Produto {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+    private Long id;
 
     @NotEmpty(message = "Informe um nome.")
     private String nome;
@@ -23,7 +23,7 @@ public class Produto {
 
     }
 
-    public Produto(long id, String nome, int quantidade, double preco, String status) {
+    public Produto(Long id, String nome, int quantidade, double preco, String status) {
         this.id = id;
         this.nome = nome;
         this.quantidade = quantidade;
@@ -31,11 +31,11 @@ public class Produto {
         this.status = status;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
