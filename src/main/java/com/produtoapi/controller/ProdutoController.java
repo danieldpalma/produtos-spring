@@ -24,7 +24,7 @@ public class ProdutoController {
         return produtoService.listarProdutoPorId(id);
     }
 
-    @PostMapping
+    @PostMapping()
     public Produto createProduto(@RequestBody Produto produto) {
         return produtoService.salvarProduto(produto);
     }
@@ -37,5 +37,10 @@ public class ProdutoController {
     @DeleteMapping("/{id}")
     public void deletarProduto(@PathVariable Long id) {
         produtoService.deletarProduto(id);
+    }
+
+    @PostMapping("/salvarLista")
+    public List<Produto> createListProdutos(@RequestBody List<Produto> produtos) {
+        return produtoService.salvarProdutos(produtos);
     }
 }
