@@ -43,4 +43,29 @@ public class ProdutoController {
     public List<Produto> createListProdutos(@RequestBody List<Produto> produtos) {
         return produtoService.salvarProdutos(produtos);
     }
+
+    @GetMapping("/buscarPorNome")
+    public List<Produto> getProdutosPorNome(@RequestParam String nome) {
+        return produtoService.listarPorNome(nome);
+    }
+
+    @GetMapping("/buscarContendo")
+    public List<Produto> getProdutosContendo(@RequestParam String nome) {
+        return produtoService.listarPorNomeContendo(nome);
+    }
+
+    @GetMapping("/buscarPorNomeEStatus")
+    public List<Produto> getProdutosPorNomeEStatus(@RequestParam String nome, @RequestParam String status) {
+        return produtoService.listarPorNomeAndStatus(nome, status);
+    }
+
+    @GetMapping("/buscarPorNomeComecandoCom")
+    public List<Produto> getProdutosPorNomeComecandoCom(@RequestParam String nome) {
+        return produtoService.listarPorNomeComecandoCom(nome);
+    }
+
+    @GetMapping("/buscarPorNomeTerminadoCom")
+    public List<Produto> getProdutosPorNomeTerminadoCom(@RequestParam String nome) {
+        return produtoService.listarPorNomeTerminadoEm(nome);
+    }
 }

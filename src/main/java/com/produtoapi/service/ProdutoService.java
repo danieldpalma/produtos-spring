@@ -41,4 +41,24 @@ public class ProdutoService {
     public List<Produto> salvarProdutos(List<Produto> produtos) {
         return produtoRepository.saveAll(produtos);
     }
+
+    public List<Produto> listarPorNome(String nome) {
+        return produtoRepository.findByNome(nome);
+    }
+
+    public List<Produto> listarPorNomeContendo(String nome) {
+        return produtoRepository.findByNomeContaining(nome);
+    }
+
+    public List<Produto> listarPorNomeAndStatus(String nome, String status) {
+        return produtoRepository.findByNomeAndStatus(nome, status);
+    }
+
+    public List<Produto> listarPorNomeComecandoCom(String nome) {
+        return produtoRepository.findByNomeStartingWith(nome);
+    }
+
+    public List<Produto> listarPorNomeTerminadoEm(String nome) {
+        return produtoRepository.findByNomeEndingWith(nome);
+    }
 }
