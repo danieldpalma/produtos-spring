@@ -77,4 +77,16 @@ public class ProdutoService {
     public Double listarPrecoTotal() {
         return produtoRepository.findTotalPreco();
     }
+
+    public List<Produto> listarQuantidade(Integer quantidade) {
+        return produtoRepository.findByQuantidade(quantidade);
+    }
+
+    public List<Produto> listarPorQuantidadeMaiorQue(Integer quantidade) {
+        return produtoRepository.findByQuantidadeGreaterThan(quantidade);
+    }
+
+    public List<Produto> listarPorQuantidadeMenorQue(Integer quantidade) {
+        return produtoRepository.findByQuantidadeLessThan(quantidade);
+    }
 }

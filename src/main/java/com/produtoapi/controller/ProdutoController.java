@@ -88,4 +88,19 @@ public class ProdutoController {
     public Double getTotalPreco() {
         return produtoService.listarPrecoTotal();
     }
+
+    @GetMapping("/listarQuantidade")
+    public List<Produto> getProdutosPorQuantidade(@RequestParam Integer quantidade) {
+        return produtoService.listarQuantidade(quantidade);
+    }
+
+    @GetMapping("/quantidadeMaiorQue")
+    public List<Produto> getProdutoPorQuantidadeMaiorQue(@RequestParam Integer quantidade) {
+        return produtoService.listarPorQuantidadeMaiorQue(quantidade);
+    }
+
+    @GetMapping("/quantidadeMenorQue")
+    public List<Produto> getProdutosPorQuantidadeMenorQue(@RequestParam Integer quantidade) {
+        return produtoService.listarPorQuantidadeMenorQue(quantidade);
+    }
 }
