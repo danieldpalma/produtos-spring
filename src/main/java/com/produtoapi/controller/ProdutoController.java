@@ -68,4 +68,24 @@ public class ProdutoController {
     public List<Produto> getProdutosPorNomeTerminadoCom(@RequestParam String nome) {
         return produtoService.listarPorNomeTerminadoEm(nome);
     }
+
+    @GetMapping("/preco")
+    public List<Produto> getProdutosPorPreco(@RequestParam double preco) {
+        return produtoService.listarPorPreco(preco);
+    }
+
+    @GetMapping("/precoMaiorQue")
+    public List<Produto> getProdutosPorPrecoMaiorQue(@RequestParam double preco) {
+        return produtoService.listarPorPrecoMaiorQue(preco);
+    }
+
+    @GetMapping("/precoMenorQue")
+    public List<Produto>  getProdutosPorPrecoMenorQue(@RequestParam double preco) {
+        return produtoService.listarPorPrecoMenorThan(preco);
+    }
+
+    @GetMapping("/totalPreco")
+    public Double getTotalPreco() {
+        return produtoService.listarPrecoTotal();
+    }
 }

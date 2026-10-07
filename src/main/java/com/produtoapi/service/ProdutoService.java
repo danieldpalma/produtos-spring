@@ -61,4 +61,20 @@ public class ProdutoService {
     public List<Produto> listarPorNomeTerminadoEm(String nome) {
         return produtoRepository.findByNomeEndingWith(nome);
     }
+
+    public List<Produto> listarPorPreco(double preco) {
+        return produtoRepository.findByPreco(preco);
+    }
+
+    public List<Produto> listarPorPrecoMaiorQue(double preco) {
+        return produtoRepository.findByPrecoGreaterThan(preco);
+    }
+
+    public  List<Produto> listarPorPrecoMenorThan(double preco) {
+        return produtoRepository.findByPrecoLessThan(preco);
+    }
+
+    public Double listarPrecoTotal() {
+        return produtoRepository.findTotalPreco();
+    }
 }
