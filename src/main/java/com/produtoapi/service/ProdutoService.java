@@ -89,4 +89,20 @@ public class ProdutoService {
     public List<Produto> listarPorQuantidadeMenorQue(Integer quantidade) {
         return produtoRepository.findByQuantidadeLessThan(quantidade);
     }
+
+    public List<Produto> listarPorStatus(String status) {
+        return produtoRepository.findByStatus(status);
+    }
+
+    public List<Produto> listarPorStatusVazio() {
+        return produtoRepository.findByStatusIsNull();
+    }
+
+    public List<Produto> listarPorPrecoAndStatus(Double preco, String status) {
+        return produtoRepository.findByPrecoAndStatus(preco, status);
+    }
+
+    public Long quantidadeTotalDeProdutos() {
+        return produtoRepository.count();
+    }
 }

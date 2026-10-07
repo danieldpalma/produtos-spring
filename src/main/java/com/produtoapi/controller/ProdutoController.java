@@ -103,4 +103,24 @@ public class ProdutoController {
     public List<Produto> getProdutosPorQuantidadeMenorQue(@RequestParam Integer quantidade) {
         return produtoService.listarPorQuantidadeMenorQue(quantidade);
     }
+
+    @GetMapping("/listarStatus")
+    public List<Produto> getProdutosPorStatus(@RequestParam String status) {
+        return produtoService.listarPorStatus(status);
+    }
+
+    @GetMapping("/listarStatusVazio")
+    public List<Produto> getProdutosPorStatusVazio() {
+        return produtoService.listarPorStatusVazio();
+    }
+
+    @GetMapping("/listarPrecoStatus")
+    public List<Produto> getProdutosPorPrecoAndStatus(@RequestParam Double preco, @RequestParam String status) {
+        return produtoService.listarPorPrecoAndStatus(preco, status);
+    }
+
+    @GetMapping("/totalProdutos")
+    public Long getTotalProdutos() {
+        return produtoService.quantidadeTotalDeProdutos();
+    }
 }
